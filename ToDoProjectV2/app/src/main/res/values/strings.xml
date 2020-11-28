@@ -12,5 +12,7 @@
     <!-- Botton navigation namings -->
     <string name="bottom_menu_todo">Todo</string>
     <string name="bottom_menu_stickynotes">Sticky Notes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

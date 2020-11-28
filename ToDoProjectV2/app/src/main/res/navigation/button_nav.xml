@@ -9,10 +9,19 @@
         android:id="@+id/fragmentTodo"
         android:name="com.example.todoprojectv2.todo.FragmentTodo"
         android:label="@string/appbar_todo"
-        tools:layout="@layout/fragment_todo" />
+        tools:layout="@layout/fragment_todo" >
+        <action
+            android:id="@+id/action_fragmentTodo_to_addToDo"
+            app:destination="@id/addToDo" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentStickyNotes"
         android:name="com.example.todoprojectv2.stickynotes.FragmentStickyNotes"
         android:label="@string/appbar_stickynotes"
         tools:layout="@layout/fragment_sticky_notes" />
+    <fragment
+        android:id="@+id/addToDo"
+        android:name="com.example.todoprojectv2.todo.addtodo.AddToDo"
+        android:label="fragment_add_todo"
+        tools:layout="@layout/fragment_add_todo" />
 </navigation>

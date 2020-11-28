@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.todoprojectv2.R;
 import com.example.todoprojectv2.model.shared.ToDoModelEntity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +59,16 @@ public class FragmentTodo extends Fragment {
             @Override
             public void onChanged(List<ToDoModelEntity> toDoModelEntities) {
                 adapter.setToDos(toDoModelEntities);
+            }
+        });
+
+        // FAB
+        FloatingActionButton floatingActionButton = view.findViewById(R.id.fab_add_todo);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_fragmentTodo_to_addToDo);
             }
         });
 
