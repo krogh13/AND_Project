@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragmentTodo"
+        android:title="@string/bottom_menu_todo"
+        android:icon="@drawable/ic_todo_black_24dp"
+        />
+    <item
+        android:id="@+id/fragmentStickyNotes"
+        android:title="@string/bottom_menu_stickynotes"
+        android:icon="@drawable/ic_stickynotes_black_24dp"
+        />
+</menu>

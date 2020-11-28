@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ToDoProjectV2</string>
+
+    <!-- Fragments display name if empty -->
+    <string name="fragment_todo">Todo Fragment</string>
+    <string name="fragment_stickynotes">Sticky Notes Fragment</string>
+
+    <!-- AppBar namings -->
+    <string name="appbar_todo">Todo</string>
+    <string name="appbar_stickynotes">Sticky Notes</string>
+
+    <!-- Botton navigation namings -->
+    <string name="bottom_menu_todo">Todo</string>
+    <string name="bottom_menu_stickynotes">Sticky Notes</string>
+
+</resources>
