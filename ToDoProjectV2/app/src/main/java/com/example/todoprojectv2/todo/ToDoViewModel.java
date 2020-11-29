@@ -22,8 +22,8 @@ public class ToDoViewModel extends AndroidViewModel {
         allTodos = repository.getAllToDos();
     }
 
-    public void insert(ToDoModelEntity toDoModelEntity) {
-        repository.insert(toDoModelEntity);
+    public void insert(String title, int priority) {
+        repository.insert(new ToDoModelEntity(title, priority));
     }
 
     public void update(ToDoModelEntity toDoModelEntity) {

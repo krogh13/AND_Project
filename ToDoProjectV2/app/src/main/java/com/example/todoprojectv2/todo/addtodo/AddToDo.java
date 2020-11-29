@@ -55,7 +55,9 @@ public class AddToDo extends Fragment {
         final EditText getEditTextDescription = view.findViewById(R.id.editText_description);
 
         // NumberPicker
-        NumberPicker numberPickerPriority = view.findViewById(R.id.numberPicker_priority);
+        final NumberPicker numberPickerPriority = view.findViewById(R.id.numberPicker_priority);
+        numberPickerPriority.setMinValue(1);
+        numberPickerPriority.setMaxValue(5);
 
         // CalendarView
 //        CalendarView calendarView = view.findViewById(R.id.calendarView);
@@ -78,8 +80,18 @@ public class AddToDo extends Fragment {
                         && !TextUtils.isEmpty(getEditTextDescription.getText().toString())) {
 
                     //todo create methods to use the viewModel and insert into DB
+                    toDoViewModel.insert(editTextTitle.getText().toString(), numberPickerPriority.getValue());
+
                     Navigation.findNavController(view).navigate(R.id.fragmentTodo);
                     Toast.makeText(getContext(), "To Do is registered", Toast.LENGTH_SHORT).show();
+
+                    //If the title is empty a toast will be shown
+                } else if (TextUtils.isEmpty(editTextTitle.getText().toString())) {
+                    Toast.makeText(getContext(), "A title must be entered!", Toast.LENGTH_LONG).show();
+
+                    //If the description is empty a toast will be shown
+                } else if (TextUtils.isEmpty(getEditTextDescription.getText().toString())) {
+                    Toast.makeText(getContext(), "A description must be entered!", Toast.LENGTH_LONG).show();
                 }
             }
         });
