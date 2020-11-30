@@ -1,4 +1,4 @@
-package com.example.todoprojectv2.todo;
+package com.example.todoprojectv2.stickynotes;
 
 import android.app.Application;
 
@@ -12,12 +12,12 @@ import com.example.todoprojectv2.model.shared.ToDoModelEntity;
 import java.util.Date;
 import java.util.List;
 
-public class ToDoViewModel extends AndroidViewModel {
+public class NoteViewModel extends AndroidViewModel {
 
     private ProjectRepository repository;
     private LiveData<List<ToDoModelEntity>> allTodos;
 
-    public ToDoViewModel(@NonNull Application application) {
+    public NoteViewModel(@NonNull Application application) {
         super(application);
         repository = new ProjectRepository(application);
         allTodos = repository.getAllToDos();

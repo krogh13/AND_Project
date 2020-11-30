@@ -61,4 +61,9 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
             priority = itemView.findViewById(R.id.ToDoPriority);
         }
     }
+
+    // Used to get a certain position to make the swipe to delete work
+    public ToDoModelEntity getToDoAtPosition(int position) {
+        return todoLists.get(position);
+    }
 }

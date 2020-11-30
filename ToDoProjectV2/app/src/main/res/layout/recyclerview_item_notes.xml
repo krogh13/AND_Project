@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:background="@drawable/rounded_corner">
+
+        <TextView
+            android:id="@+id/NotesPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="1"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/NotesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="20dp"
+            android:maxLines="1"
+            android:layout_toStartOf="@id/NotesPriority"
+            android:layout_alignParentStart="true"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:id="@+id/NotesDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="06-12-2020"
+            android:textSize="20dp"
+            android:layout_marginTop="50dp"
+            />
+
+        <TextView
+            android:id="@+id/NotesDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_alignParentStart="true"
+            />
+
+
+    </RelativeLayout>
+</LinearLayout>

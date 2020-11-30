@@ -79,25 +79,6 @@ public class ProjectRepository {
         }
     }
 
-    public void deleteAllToDos() {
-        new DeleteAllToDoAsync(toDoDAO).execute();
-    }
-
-    private static class DeleteAllToDoAsync extends AsyncTask<Void, Void, Void> {
-
-        private ToDoDAO toDoDAO;
-
-        private DeleteAllToDoAsync(ToDoDAO toDoDAO) {
-            this.toDoDAO = toDoDAO;
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            toDoDAO.deleteAllToDos();
-            return null;
-        }
-    }
-
     public LiveData<List<ToDoModelEntity>> getAllToDos() {
         return allToDos;
     }

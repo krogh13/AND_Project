@@ -19,6 +19,7 @@ import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.example.todoprojectv2.R;
+import com.example.todoprojectv2.stickynotes.NoteViewModel;
 import com.example.todoprojectv2.todo.ToDoViewModel;
 
 import java.util.Date;
@@ -26,6 +27,7 @@ import java.util.Date;
 public class AddToDo extends Fragment {
 
     private ToDoViewModel toDoViewModel;
+    private NoteViewModel noteViewModel;
     private long calenderDate;
 
         public AddToDo() {
@@ -49,6 +51,7 @@ public class AddToDo extends Fragment {
 
         // Initialize ViewModel
         toDoViewModel = new ViewModelProvider(this).get(ToDoViewModel.class);
+        noteViewModel = new ViewModelProvider(this).get(NoteViewModel.class);
 
         //EditText fields
         final EditText editTextTitle = view.findViewById(R.id.editText_title);
@@ -60,15 +63,15 @@ public class AddToDo extends Fragment {
         numberPickerPriority.setMaxValue(5);
 
         // CalendarView
-//        CalendarView calendarView = view.findViewById(R.id.calendarView);
-//        calenderDate = calendarView.getDate();
-//        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-//            @Override
-//            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-//                Date temp = new Date(year - 1990, month, dayOfMonth);
-//                calenderDate = temp.getTime();
-//            }
-//        });
+        CalendarView calendarView = view.findViewById(R.id.calendarView);
+        calenderDate = calendarView.getDate();
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                Date temp = new Date(year - 1900, month, dayOfMonth);
+                calenderDate = temp.getTime();
+            }
+        });
 
         // Add button
         Button buttonAdd = view.findViewById(R.id.button_add);
@@ -79,8 +82,11 @@ public class AddToDo extends Fragment {
                 if (!TextUtils.isEmpty(editTextTitle.getText().toString())
                         && !TextUtils.isEmpty(getEditTextDescription.getText().toString())) {
 
-                    //todo create methods to use the viewModel and insert into DB
-                    toDoViewModel.insert(editTextTitle.getText().toString(), numberPickerPriority.getValue());
+                    // NoteFragment
+                    noteViewModel.insert(editTextTitle.getText().toString()
+                            , numberPickerPriority.getValue()
+                            , new Date(calenderDate)
+                            , getEditTextDescription.getText().toString());
 
                     Navigation.findNavController(view).navigate(R.id.fragmentTodo);
                     Toast.makeText(getContext(), "To Do is registered", Toast.LENGTH_SHORT).show();

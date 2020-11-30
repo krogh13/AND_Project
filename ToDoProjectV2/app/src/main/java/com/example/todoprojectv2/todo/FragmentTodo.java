@@ -2,16 +2,19 @@ package com.example.todoprojectv2.todo;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.todoprojectv2.R;
 import com.example.todoprojectv2.model.shared.ToDoModelEntity;
@@ -71,6 +74,23 @@ public class FragmentTodo extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_fragmentTodo_to_addToDo);
             }
         });
+
+        // Swipe to delete
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                toDoViewModel.delete(adapter.getToDoAtPosition(viewHolder.getAdapterPosition()));
+
+                // Create a toast to show it was deleted
+                Toast.makeText(getContext(), "To Do deleted", Toast.LENGTH_SHORT).show();
+            }
+        }).attachToRecyclerView(recyclerView);
 
 
         return view;
