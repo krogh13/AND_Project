@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,10 +17,11 @@ import android.widget.Toast;
 
 import com.example.todoprojectv2.R;
 import com.example.todoprojectv2.model.shared.ToDoModelEntity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.todoprojectv2.viewmodel.ToDoViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class FragmentTodo extends Fragment {
 
@@ -29,7 +29,7 @@ public class FragmentTodo extends Fragment {
     private ToDoAdapter adapter;
     private List<ToDoModelEntity> lists = new ArrayList<>();
 
-   public FragmentTodo() {
+    public FragmentTodo() {
         // Required empty public constructor
     }
 
@@ -44,12 +44,13 @@ public class FragmentTodo extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_todo, container, false);
 
         // Recyclerview
-        RecyclerView recyclerView = view.findViewById(R.id.todoRV);
+        RecyclerView recyclerView = view.findViewById(R.id.todoRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.hasFixedSize();
 
@@ -62,16 +63,6 @@ public class FragmentTodo extends Fragment {
             @Override
             public void onChanged(List<ToDoModelEntity> toDoModelEntities) {
                 adapter.setToDos(toDoModelEntities);
-            }
-        });
-
-        // FAB
-        FloatingActionButton floatingActionButton = view.findViewById(R.id.fab_add_todo);
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_fragmentTodo_to_addToDo);
             }
         });
 
@@ -94,5 +85,6 @@ public class FragmentTodo extends Fragment {
 
 
         return view;
+
     }
 }

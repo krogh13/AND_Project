@@ -1,4 +1,4 @@
-package com.example.todoprojectv2.todo.addtodo;
+package com.example.todoprojectv2.overview.addtodo;
 
 import android.os.Bundle;
 
@@ -13,21 +13,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import com.example.todoprojectv2.R;
-import com.example.todoprojectv2.stickynotes.NoteViewModel;
-import com.example.todoprojectv2.todo.ToDoViewModel;
+import com.example.todoprojectv2.viewmodel.ToDoViewModel;
 
 import java.util.Date;
 
 public class AddToDo extends Fragment {
 
     private ToDoViewModel toDoViewModel;
-    private NoteViewModel noteViewModel;
     private long calenderDate;
 
         public AddToDo() {
@@ -51,7 +48,6 @@ public class AddToDo extends Fragment {
 
         // Initialize ViewModel
         toDoViewModel = new ViewModelProvider(this).get(ToDoViewModel.class);
-        noteViewModel = new ViewModelProvider(this).get(NoteViewModel.class);
 
         //EditText fields
         final EditText editTextTitle = view.findViewById(R.id.editText_title);
@@ -83,12 +79,12 @@ public class AddToDo extends Fragment {
                         && !TextUtils.isEmpty(getEditTextDescription.getText().toString())) {
 
                     // NoteFragment
-                    noteViewModel.insert(editTextTitle.getText().toString()
+                    toDoViewModel.insert(editTextTitle.getText().toString()
                             , numberPickerPriority.getValue()
                             , new Date(calenderDate)
                             , getEditTextDescription.getText().toString());
 
-                    Navigation.findNavController(view).navigate(R.id.fragmentTodo);
+                    Navigation.findNavController(view).navigate(R.id.fragmentOverview);
                     Toast.makeText(getContext(), "To Do is registered", Toast.LENGTH_SHORT).show();
 
                     //If the title is empty a toast will be shown
@@ -108,7 +104,7 @@ public class AddToDo extends Fragment {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.fragmentTodo);
+                Navigation.findNavController(view).navigate(R.id.fragmentOverview);
             }
         });
 

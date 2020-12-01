@@ -1,4 +1,4 @@
-package com.example.todoprojectv2.stickynotes;
+package com.example.todoprojectv2.viewmodel;
 
 import android.app.Application;
 
@@ -12,15 +12,15 @@ import com.example.todoprojectv2.model.shared.ToDoModelEntity;
 import java.util.Date;
 import java.util.List;
 
-public class NoteViewModel extends AndroidViewModel {
+public class ToDoViewModel extends AndroidViewModel {
 
     private ProjectRepository repository;
-    private LiveData<List<ToDoModelEntity>> allTodos;
+    private LiveData<List<ToDoModelEntity>> allToDos;
 
-    public NoteViewModel(@NonNull Application application) {
+    public ToDoViewModel(@NonNull Application application) {
         super(application);
         repository = new ProjectRepository(application);
-        allTodos = repository.getAllToDos();
+        allToDos = repository.getAllToDos();
     }
 
     public void insert(String title, int priority, Date date, String description) {
@@ -36,7 +36,7 @@ public class NoteViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<ToDoModelEntity>> getAllToDos() {
-        return allTodos;
+        return allToDos;
     }
 
 }

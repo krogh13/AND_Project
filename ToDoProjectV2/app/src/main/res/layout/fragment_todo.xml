@@ -5,26 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".todo.FragmentTodo">
-    
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/todoRV"
+        android:id="@+id/todoRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:paddingTop="20dp"
-        tools:listitem="@layout/recyclerview_item"
+        tools:listitem="@layout/recyclerview_item_todo"
         />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_todo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/ic_add_black_24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
