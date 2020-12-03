@@ -11,4 +11,9 @@
         android:title="@string/bottom_menu_todo"
         android:icon="@drawable/ic_stickynotes_black_24dp"
         />
+    <item
+        android:id="@+id/fragmentWeather"
+        android:title="@string/bottom_menu_weather"
+        android:icon="@drawable/ic_weather_black_24dp"
+        />
 </menu>

@@ -9,9 +9,11 @@
     <string name="appbar_overview">Overview</string>
     <string name="appbar_todo">To Do</string>
     <string name="appbar_add_todo">Add To Do</string>
+    <string name="appbar_weather">Weather</string>
 
     <!-- Botton navigation namings -->
     <string name="bottom_menu_overview">Overview</string>
     <string name="bottom_menu_todo">ToDo</string>
+    <string name="bottom_menu_weather">Weather</string>
 
 </resources>

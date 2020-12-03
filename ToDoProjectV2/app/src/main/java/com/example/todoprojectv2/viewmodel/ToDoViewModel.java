@@ -17,6 +17,8 @@ public class ToDoViewModel extends AndroidViewModel {
     private ProjectRepository repository;
     private LiveData<List<ToDoModelEntity>> allToDos;
 
+    private ToDoModelEntity clickTodo;
+
     public ToDoViewModel(@NonNull Application application) {
         super(application);
         repository = new ProjectRepository(application);
