@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        signIn();
         setContentView(R.layout.activity_main);
 
         // Initialising application bar and bottom navigation
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
+
+    }
+
+    private void signIn() {
         // Firebase
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.GoogleBuilder().build(),
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent signInIntent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
+                .setLogo(R.drawable.ic_logo_black_24dp)
                 .setAvailableProviders(providers)
                 .build();
 
@@ -55,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
 
         if (resultCode == RESULT_OK) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
