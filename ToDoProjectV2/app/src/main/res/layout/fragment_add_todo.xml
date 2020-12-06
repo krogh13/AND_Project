@@ -12,8 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <!--todo delete inputType if there cannot be spaces on the title -->
-
     <EditText
         android:id="@+id/editText_title"
         android:layout_width="match_parent"

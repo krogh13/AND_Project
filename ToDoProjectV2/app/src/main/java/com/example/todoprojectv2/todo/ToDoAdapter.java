@@ -62,10 +62,10 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title = itemView.findViewById(R.id.NotesTitle);
-            priority = itemView.findViewById(R.id.NotesPriority);
-            date = itemView.findViewById(R.id.NotesDate);
-            description = itemView.findViewById(R.id.NotesDescription);
+            title = itemView.findViewById(R.id.ToDoTitle);
+            priority = itemView.findViewById(R.id.ToDoPriority);
+            date = itemView.findViewById(R.id.ToDoDate);
+            description = itemView.findViewById(R.id.ToDoDescription);
         }
     }
 

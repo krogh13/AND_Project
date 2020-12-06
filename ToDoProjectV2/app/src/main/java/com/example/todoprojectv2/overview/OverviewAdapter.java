@@ -36,6 +36,7 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
         holder.title.setText(currentToDo.getTitle());
         // Cast to string since the priority is a int
         holder.priority.setText(String.valueOf(currentToDo.getPriority()));
+
     }
 
     @Override
@@ -56,8 +57,8 @@ public class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title = itemView.findViewById(R.id.ToDoTitle);
-            priority = itemView.findViewById(R.id.ToDoPriority);
+            title = itemView.findViewById(R.id.OverviewTitle);
+            priority = itemView.findViewById(R.id.OverviewPriority);
         }
     }
 

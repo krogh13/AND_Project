@@ -14,7 +14,7 @@
         android:background="@drawable/rounded_corner">
 
         <TextView
-            android:id="@+id/NotesPriority"
+            android:id="@+id/ToDoPriority"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -22,19 +22,19 @@
             android:textSize="20dp"/>
 
         <TextView
-            android:id="@+id/NotesTitle"
+            android:id="@+id/ToDoTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
             android:textSize="20dp"
             android:maxLines="1"
-            android:layout_toStartOf="@id/NotesPriority"
+            android:layout_toStartOf="@id/ToDoPriority"
             android:layout_alignParentStart="true"
             android:ellipsize="end"
             />
 
         <TextView
-            android:id="@+id/NotesDate"
+            android:id="@+id/ToDoDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -44,7 +44,7 @@
             />
 
         <TextView
-            android:id="@+id/NotesDescription"
+            android:id="@+id/ToDoDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Description"

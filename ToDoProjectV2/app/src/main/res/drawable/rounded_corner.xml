@@ -4,6 +4,13 @@
     android:shape="rectangle">
     <corners android:radius="5dp" />  // Setting radius of the corner
     <stroke android:width="2dp" android:color="#D8D8D8" /> // Setting the color and width of border
-    <solid android:color="#22FF5722" /> // Setting the inner background color
+
+    <gradient
+        android:type="linear"
+        android:startColor="#FFFFFF"
+        android:endColor="#21673AB7"
+        android:angle="360"
+        /> // Setting the inner background color
+
 
 </shape>

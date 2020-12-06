@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".overview.FragmentOverview">
-    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/overviewRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingTop="20dp"
+        android:paddingTop="10dp"
         tools:listitem="@layout/recyclerview_item_overview"
         />
 
@@ -20,11 +20,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/colorPrimary"
         android:src="@drawable/ic_add_black_24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

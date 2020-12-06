@@ -77,8 +77,6 @@ public class FragmentWeather extends Fragment {
             }
         });
 
-
-
         return view;
     }
 }
