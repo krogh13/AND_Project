@@ -5,15 +5,29 @@
     <string name="fragment_overview">Overview Fragment</string>
     <string name="fragment_todo">ToDo Fragment</string>
 
-    <!-- AppBar namings -->
-    <string name="appbar_overview">Overview</string>
-    <string name="appbar_todo">To Do</string>
-    <string name="appbar_add_todo">Add To Do</string>
-    <string name="appbar_weather">Weather</string>
-
     <!-- Botton navigation namings -->
     <string name="bottom_menu_overview">Overview</string>
     <string name="bottom_menu_todo">ToDo</string>
     <string name="bottom_menu_weather">Weather</string>
+    <string name="bottom_menu_settings">Settings</string>
+
+    <!-- Add ToDoFragment -->
+    <string name="addtodo_title">Title</string>
+    <string name="addtodo_description">Description</string>
+    <string name="addtodo_priority">Priority:</string>
+
+    <!-- Weather fragment -->
+    <string name="weather_temperature">Temperature:</string>
+    <string name="weather_mintemperature">Min Temperature:</string>
+    <string name="weather_maxtemperature">Max Temperature:</string>
+    <string name="weather_humidity">Himidity:</string>
+    <string name="weather_feels_like">Feels Like:</string>
+    <string name="weather_degree"> C</string>
+    <string name="weather_percentage"> %</string>
+
+    <!-- Settings fragment -->
+    <string name="preferenceCategory_logout_title">Account</string>
+    <string name="preference_logout_title">Sign Out</string>
+    <string name="preference_logout_description">This will sign you out from the application.</string>
 
 </resources>

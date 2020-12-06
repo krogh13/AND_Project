@@ -14,8 +14,6 @@ public class WeatherResponse {
 
         public String humidity;
 
-        private String pressure;
-
         public String feels_like;
 
         public String temp_max;

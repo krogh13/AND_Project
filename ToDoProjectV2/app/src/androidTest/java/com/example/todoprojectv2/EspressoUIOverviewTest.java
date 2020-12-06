@@ -91,6 +91,11 @@ public class EspressoUIOverviewTest {
     }
 
     // Used for setting the priority
+
+    /*
+    * Taken from stack overflow: https://stackoverflow.com/questions/24074495/automating-number-picker-in-android-using-espresso
+    */
+
     private static ViewAction setNumber(final int priority) {
         return new ViewAction() {
             @Override

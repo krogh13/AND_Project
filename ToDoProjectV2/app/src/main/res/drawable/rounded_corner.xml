@@ -3,7 +3,7 @@
 
     android:shape="rectangle">
     <corners android:radius="5dp" />  // Setting radius of the corner
-    <stroke android:width="2dp" android:color="#D8D8D8" /> // Setting the color and width of border
+    <stroke android:width="2dp" android:color="#216200EE" /> // Setting the color and width of border
 
     <gradient
         android:type="linear"

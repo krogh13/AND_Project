@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/fragmentOverview"
         android:name="com.example.todoprojectv2.overview.FragmentOverview"
-        android:label="@string/appbar_overview"
         tools:layout="@layout/fragment_oveview">
         <action
             android:id="@+id/action_fragmentTodo_to_addToDo"
@@ -17,16 +16,17 @@
     <fragment
         android:id="@+id/fragmentToDo"
         android:name="com.example.todoprojectv2.todo.FragmentTodo"
-        android:label="@string/appbar_todo"
         tools:layout="@layout/fragment_todo" />
     <fragment
         android:id="@+id/addToDo"
         android:name="com.example.todoprojectv2.overview.addtodo.AddToDo"
-        android:label="@string/appbar_add_todo"
         tools:layout="@layout/fragment_add_todo" />
     <fragment
         android:id="@+id/fragmentWeather"
         android:name="com.example.todoprojectv2.weather.FragmentWeather"
-        android:label="@string/appbar_weather"
         tools:layout="@layout/fragment_weather" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.example.todoprojectv2.settings.FragmentSettings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
