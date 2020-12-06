@@ -56,28 +56,6 @@ public class EspressoUIOverviewTest {
     }
 
     @Test
-    public void deleteToDoTesting() throws InterruptedException {
-        threadSleeper(10000);
-
-        onView(withId(R.id.overviewRecyclerView)).perform(swipeLeft());
-    }
-
-    @Test
-    public void addNewToDoTestingPriorityMatch() throws InterruptedException {
-        threadSleeper(10000);
-
-        onView(withId(R.id.fab_add_todo)).perform(click());
-        onView(withId(R.id.editText_title)).perform(replaceText("Espresso UI Test"), closeSoftKeyboard());
-        onView(withId(R.id.editText_description)).perform(replaceText("This is a test for espresso UI Testing"), closeSoftKeyboard());
-        ViewInteraction numPicker = onView(withClassName(Matchers.equalTo(NumberPicker.class.getName())));
-        numPicker.perform(setNumber(4));
-        onView(withId(R.id.button_add)).perform(scrollTo(), click());
-
-        onView(withId(R.id.OverviewPriority)).check(matches(withText("4")));
-
-    }
-
-    @Test
     public void backButtonOnAddNewToDoTesting() throws InterruptedException {
         threadSleeper(10000);
 
