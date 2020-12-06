@@ -109,6 +109,5 @@ public class AddToDo extends Fragment {
         });
 
         return view;
-
     }
 }

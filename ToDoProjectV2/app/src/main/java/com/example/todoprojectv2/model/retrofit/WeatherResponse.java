@@ -1,7 +1,5 @@
 package com.example.todoprojectv2.model.retrofit;
 
-import java.util.List;
-
 public class WeatherResponse {
 
     //todo delete all unused
@@ -12,7 +10,7 @@ public class WeatherResponse {
 
         public String temp;
 
-        private String temp_min;
+        public String temp_min;
 
         public String humidity;
 
@@ -20,7 +18,7 @@ public class WeatherResponse {
 
         public String feels_like;
 
-        private String temp_max;
+        public String temp_max;
     }
 
 

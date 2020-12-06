@@ -29,12 +29,6 @@ public class ToDoModelEntity {
     @ColumnInfo(name = "Description")
     private String description;
 
-//    @Ignore
-//    public ToDoModelEntity(String title, int priority) {
-//        this.title = title;
-//        this.priority = priority;
-//    }
-
     public ToDoModelEntity(String title, int priority, Date date, String description) {
         this.title = title;
         this.priority = priority;

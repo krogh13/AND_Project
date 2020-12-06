@@ -83,8 +83,6 @@ public class FragmentTodo extends Fragment {
             }
         }).attachToRecyclerView(recyclerView);
 
-
         return view;
-
     }
 }

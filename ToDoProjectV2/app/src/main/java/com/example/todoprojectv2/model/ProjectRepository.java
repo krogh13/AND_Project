@@ -66,25 +66,6 @@ public class ProjectRepository {
         return allToDos;
     }
 
-    public void update(ToDoModelEntity toDoModelEntity) {
-        new UpdateToDoAsync(toDoDAO).execute(toDoModelEntity);
-    }
-
-    private static class UpdateToDoAsync extends AsyncTask<ToDoModelEntity, Void, Void> {
-
-        private ToDoDAO toDoDAO;
-
-        private UpdateToDoAsync(ToDoDAO toDoDAO) {
-            this.toDoDAO = toDoDAO;
-        }
-
-        @Override
-        protected Void doInBackground(ToDoModelEntity... toDoModelEntities) {
-            toDoDAO.update(toDoModelEntities[0]);
-            return null;
-        }
-    }
-
     public void delete(ToDoModelEntity toDoModelEntity) {
         new DeleteToDoAsync(toDoDAO).execute(toDoModelEntity);
     }

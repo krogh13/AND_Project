@@ -54,6 +54,12 @@ public class FragmentWeather extends Fragment {
         // TextView Temperature
         final TextView textViewTemperature = view.findViewById(R.id.textView_temperature);
 
+        // TextView MinTemperature
+        final TextView textViewMinTemperature = view.findViewById(R.id.textView_mintemperature);
+
+        // TextView Max Temperature
+        final TextView textViewMaxTemperature = view.findViewById(R.id.textView_maxtemperature);
+
         // TextView Humidity
         final TextView textViewHumidity = view.findViewById(R.id.textView_humidity);
 
@@ -65,6 +71,8 @@ public class FragmentWeather extends Fragment {
             @Override
             public void onChanged(WeatherResponse.Main mains) {
                 textViewTemperature.setText(mains.temp);
+                textViewMinTemperature.setText(mains.temp_min);
+                textViewMaxTemperature.setText(mains.temp_max);
                 textViewHumidity.setText(mains.humidity);
                 textViewFeelsLike.setText(mains.feels_like);
                             }

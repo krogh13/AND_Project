@@ -17,14 +17,8 @@ public interface ToDoDAO {
     @Query("SELECT * FROM todo_table ORDER BY Priority DESC")
     LiveData<List<ToDoModelEntity>> getAllToDos();
 
-    @Query("DELETE FROM todo_table")
-    void deleteAllToDos();
-
     @Insert
     void insert(ToDoModelEntity toDoEntity);
-
-    @Update
-    void update(ToDoModelEntity toDoEntity);
 
     @Delete
     void delete(ToDoModelEntity toDoEntity);

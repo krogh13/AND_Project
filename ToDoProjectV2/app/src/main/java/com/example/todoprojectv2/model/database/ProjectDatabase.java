@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.todoprojectv2.model.shared.ToDoModelEntity;
 
-@Database(entities = {ToDoModelEntity.class}, version = 2, exportSchema = false)
+@Database(entities = {ToDoModelEntity.class}, version = 3, exportSchema = false)
 public abstract class ProjectDatabase extends RoomDatabase {
 
     private static ProjectDatabase instance;

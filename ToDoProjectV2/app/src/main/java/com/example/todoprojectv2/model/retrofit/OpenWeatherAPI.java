@@ -7,7 +7,6 @@ import retrofit2.http.Query;
 
 public interface OpenWeatherAPI {
 
-    //todo add city code if possible (DK)
     @GET("/data/2.5/weather")
     Call<WeatherResponse> getWeather(@Query("q") String city, @Query("appid") String id, @Query("units") String metric);
 }

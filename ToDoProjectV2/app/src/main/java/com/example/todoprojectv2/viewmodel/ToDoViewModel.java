@@ -17,8 +17,6 @@ public class ToDoViewModel extends AndroidViewModel {
     private ProjectRepository repository;
     private LiveData<List<ToDoModelEntity>> allToDos;
 
-    private ToDoModelEntity clickTodo;
-
     public ToDoViewModel(@NonNull Application application) {
         super(application);
         repository = new ProjectRepository(application);
@@ -27,10 +25,6 @@ public class ToDoViewModel extends AndroidViewModel {
 
     public void insert(String title, int priority, Date date, String description) {
         repository.insert(new ToDoModelEntity(title, priority, date, description));
-    }
-
-    public void update(ToDoModelEntity toDoModelEntity) {
-        repository.update(toDoModelEntity);
     }
 
     public void delete(ToDoModelEntity toDoModelEntity) {

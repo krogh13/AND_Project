@@ -8,7 +8,7 @@
     <gradient
         android:type="linear"
         android:startColor="#FFFFFF"
-        android:endColor="#21673AB7"
+        android:endColor="#216200EE"
         android:angle="360"
         /> // Setting the inner background color
 
