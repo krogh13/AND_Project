@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //signIn();
+        signIn();
         setContentView(R.layout.activity_main);
 
         // Initialising application bar and bottom navigation
